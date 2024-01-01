@@ -315,6 +315,7 @@ def load_model(data_args, model_args, training_args, tokenizer, logger):
                 model_args.model_name_or_path if last_checkpoint is None else last_checkpoint,
                 device_map="auto",
                 low_cpu_mem_usage=model_args.low_cpu_mem_usage,
+                attn_implementation= "flash_attention_2"
             )
         else:
             model = AutoModelForCausalLM.from_pretrained(
@@ -324,9 +325,10 @@ def load_model(data_args, model_args, training_args, tokenizer, logger):
                 cache_dir=model_args.cache_dir,
                 revision=model_args.model_revision,
                 use_auth_token=True if model_args.use_auth_token else None,
-                torch_dtype=torch_dtype,
+                torch_dtype=torch.bfloat16,
                 low_cpu_mem_usage=model_args.low_cpu_mem_usage,
                 trust_remote_code=True,
+                attn_implementation= "flash_attention_2"
             )
         model.generation_config.max_length = data_args.max_source_length + data_args.max_new_tokens
         model.generation_config.use_cache = True        
