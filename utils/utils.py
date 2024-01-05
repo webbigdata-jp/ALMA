@@ -71,14 +71,16 @@ LANG_TABLE = {
     "fr": "French",
     "cs": "Czech",
     "is": "Icelandic",
-    "zh": "Chinese",
+    "zh_CN": "Chinese",
     "ja": "Japanese",
     "ru": "Russian",
     "uk": "Ukrainian",
     "ha": "Hausa",
     "ro": "Romanian",
     "es": "Spanish",
-    "ko": "korean"
+    "ko": "korean",
+    "zh_TW": "Taiwanese Mandarin"
+
 }
 
 ## Prefix and suffix for prompt in target language (only from English to target language if the target is non-English)
