@@ -77,6 +77,8 @@ LANG_TABLE = {
     "uk": "Ukrainian",
     "ha": "Hausa",
     "ro": "Romanian",
+    "es": "Spanish",
+    "ko": "korean"
 }
 
 ## Prefix and suffix for prompt in target language (only from English to target language if the target is non-English)
